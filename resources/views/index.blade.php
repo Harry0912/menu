@@ -8,26 +8,52 @@
         <button>清除</button>
     </div>
     <div style="margin:10px">
-        <input type="checkbox" id="gratin">焗烤
-        <input type="checkbox" id="curry">咖哩
-        <input type="checkbox" id="beverage">飲品
-        <input type="checkbox" id="dessert">甜點
+        <input type="checkbox" name="kind" value="#gratin" checked>焗烤
+        <input type="checkbox" name="kind" value="#curry" checked>咖哩
+        <input type="checkbox" name="kind" value="#beverage" checked>飲品
+        <input type="checkbox" name="kind" value="#dessert" checked>甜點
     </div>
-    <div style="margin:10px">
-        <table border="4">
-            <tr>
-                <th>焗烤</th>
-                <th>咖哩</th>
-                <th>飲品</th>
-                <th>甜點</th>
-            </tr>
-            <tr>
-                <td>焗烤焗烤焗烤</td>
-                <td>咖哩咖哩咖哩</td>
-                <td>飲品飲品飲品</td>
-                <td>甜點甜點甜點</td>
-            </tr>
-        </table>
+    <div style="margin:10px; display:flex">
+        <div id="gratin">
+            <table border="4">
+                <tr>
+                    <th>焗烤</th>
+                </tr>
+                <tr>
+                    <td>焗烤焗烤焗烤</td>
+                </tr>
+            </table>
+        </div>
+        <div id="curry">
+            <table border="4">
+                <tr>
+                    <th>咖哩</th>
+                </tr>
+                <tr>
+                    <td>咖哩咖哩咖哩</td>
+                </tr>
+            </table>
+        </div>
+        <div id="beverage">
+            <table border="4">
+                <tr>
+                    <th>飲品</th>
+                </tr>
+                <tr>
+                    <td>飲品飲品飲品</td>
+                </tr>
+            </table>
+        </div>
+        <div id="dessert">
+            <table border="4">
+                <tr>
+                    <th>甜點</th>
+                </tr>
+                <tr>
+                    <td>甜點甜點甜點</td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div style="margin:10px">
         <button>新增菜單</button>
