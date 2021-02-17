@@ -19,9 +19,14 @@
                 <tr>
                     <th>焗烤</th>
                 </tr>
-                <tr>
-                    <td>焗烤焗烤焗烤</td>
-                </tr>
+                    @foreach($gratin as $key => $value)
+                        <tr>
+                            <td>{{ $value['Name'] }}</td>
+                            <td>{{ $value['Price'] }}</td>
+                            <td><a>編輯</a></td>
+                            <td><a>刪除</a></td>
+                        </tr>
+                    @endforeach
             </table>
         </div>
         <div id="curry">
@@ -29,9 +34,14 @@
                 <tr>
                     <th>咖哩</th>
                 </tr>
-                <tr>
-                    <td>咖哩咖哩咖哩</td>
-                </tr>
+                    @foreach($curry as $key => $value)
+                        <tr>
+                            <td>{{ $value['Name'] }}</td>
+                            <td>{{ $value['Price'] }}</td>
+                            <td><a>編輯</a></td>
+                            <td><a>刪除</a></td>
+                        </tr>
+                    @endforeach
             </table>
         </div>
         <div id="beverage">
@@ -39,9 +49,14 @@
                 <tr>
                     <th>飲品</th>
                 </tr>
-                <tr>
-                    <td>飲品飲品飲品</td>
-                </tr>
+                    @foreach($beverage as $key => $value)
+                        <tr>
+                            <td>{{ $value['Name'] }}</td>
+                            <td>{{ $value['Price'] }}</td>
+                            <td><a>編輯</a></td>
+                            <td><a>刪除</a></td>
+                        </tr>
+                    @endforeach
             </table>
         </div>
         <div id="dessert">
@@ -49,9 +64,14 @@
                 <tr>
                     <th>甜點</th>
                 </tr>
-                <tr>
-                    <td>甜點甜點甜點</td>
-                </tr>
+                    @foreach($dessert as $key => $value)
+                        <tr>
+                            <td>{{ $value['Name'] }}</td>
+                            <td>{{ $value['Price'] }}</td>
+                            <td><a>編輯</a></td>
+                            <td><a>刪除</a></td>
+                        </tr>
+                    @endforeach
             </table>
         </div>
     </div>
