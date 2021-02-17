@@ -76,6 +76,6 @@
         </div>
     </div>
     <div style="margin:10px">
-        <button>新增菜單</button>
+        <a href="{{ route('create') }}">新增菜單</a>
     </div>
 @endsection

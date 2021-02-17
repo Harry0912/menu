@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MenuModel;
+use App\Models\MenuKindModel;
+use App\Http\Requests\StoreRequest;
 
 class MenuController extends Controller
 {
-    public function __construct(MenuModel $menuModel)
+    public function __construct(MenuModel $menuModel, MenuKindModel $menuKindModel)
     {
         $this->MenuModel = $menuModel;
+        $this->MenuKindModel = $menuKindModel;
     }
 
     public function index()
@@ -45,7 +48,6 @@ class MenuController extends Controller
             }
             unset($Array);
         }
-        // dd($gratin);
 
         return view('index', 
             [
@@ -53,6 +55,30 @@ class MenuController extends Controller
                 'curry' => $curry, 
                 'beverage' => $beverage, 
                 'dessert' => $dessert
+            ]
+        );
+    }
+
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store(StoreRequest $request)
+    {
+        $kind = $request->kind;
+        $name = $request->name;
+        $price = $request->price;
+
+        $menuKindId = $this->MenuKindModel
+            ->where('MenuKind', '=', $kind)
+            ->first()->MenuKindId;
+
+        $this->MenuModel->insert(
+            [
+                'Name' => $name,
+                'Price' => $price,
+                'MenuKindId' => $menuKindId
             ]
         );
     }

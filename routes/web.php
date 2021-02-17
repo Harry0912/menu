@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'MenuController@index');
+Route::get('/create', 'MenuController@create')->name('create');
+Route::post('/create/store', 'MenuController@store')->name('store');

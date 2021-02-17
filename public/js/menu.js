@@ -7,3 +7,22 @@ $('input[name="kind"]').each(function() {
         }
     });
 });
+
+function store()
+{
+    var kind = $('input[name="kind"]:checked').val();
+    var name = $('#name').val();
+    var price = $('#price').val();
+    var url = $('#url').val();
+    var csrf = $('#csrf').val();
+
+    $.ajax({
+        type:'POST',
+        url:url,
+        data:{_token:csrf, kind:kind, name:name, price:price},
+        success:function() {
+            alert('菜單新增成功!');
+            document.location.href = '/';
+        }
+    });
+}
