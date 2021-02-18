@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'MenuController@index');
+Route::get('/edit/{id}', 'MenuController@edit')->name('edit');
+Route::patch('/update', 'MenuController@update')->name('update');

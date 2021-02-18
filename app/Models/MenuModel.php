@@ -15,4 +15,13 @@ class MenuModel extends Model
     protected $primaryKey = 'Id';
 
     public $timestamps = false;
+
+    public function MenuKind()
+    {
+        return $this->hasOne(
+            'App\Models\MenuKindModel',
+            'MenuKindId',
+            'MenuKindId'
+        );
+    }
 }
