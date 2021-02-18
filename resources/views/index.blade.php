@@ -23,7 +23,7 @@
                         <tr>
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
-                            <td><a>編輯</a></td>
+                            <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
                             <td><a>刪除</a></td>
                         </tr>
                     @endforeach
@@ -38,7 +38,7 @@
                         <tr>
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
-                            <td><a>編輯</a></td>
+                            <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
                             <td><a>刪除</a></td>
                         </tr>
                     @endforeach
@@ -53,7 +53,7 @@
                         <tr>
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
-                            <td><a>編輯</a></td>
+                            <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
                             <td><a>刪除</a></td>
                         </tr>
                     @endforeach
@@ -68,7 +68,7 @@
                         <tr>
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
-                            <td><a>編輯</a></td>
+                            <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
                             <td><a>刪除</a></td>
                         </tr>
                     @endforeach

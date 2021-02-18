@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\MenuModel;
 use App\Models\MenuKindModel;
 use App\Http\Requests\StoreRequest;
+use App\Http\Requests\UpdateRequest;
 
 class MenuController extends Controller
 {
@@ -81,5 +82,33 @@ class MenuController extends Controller
                 'MenuKindId' => $menuKindId
             ]
         );
+
+    public function edit($id)
+    {
+        $data = $this->MenuModel
+            ->where('Id', '=', $id)
+            ->with('MenuKind')
+            ->first();
+
+        $id = $data->Id;
+        $name = $data->Name;
+        $price = $data->Price;
+        $kind = $data->MenuKind->Kind;
+
+        return view('edit', ['id'=>$id, 'name'=>$name, 'price'=>$price, 'kind'=>$kind]);
+    }
+
+    public function update(UpdateRequest $request)
+    {
+        $id = $request->id;
+        $name = $request->name;
+        $price = $request->price;
+
+        $data = $this->MenuModel
+            ->where('Id', '=', $id)
+            ->first();
+        $data->Name = $name;
+        $data->Price = $price;
+        $data->save();
     }
 }

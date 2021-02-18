@@ -11,4 +11,13 @@ class MenuKindModel extends Model
 
     protected $table = 'menukind';
     protected $primaryKey = 'MenuKindId';
+
+    public function MenuTable()
+    {
+        return $this->hasMany(
+            'App\Models\MenuModel',
+            'MenuKindId',
+            'MenuKindId'
+        );
+    }
 }
