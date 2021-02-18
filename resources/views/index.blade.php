@@ -24,7 +24,7 @@
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
                             <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
-                            <td><a>刪除</a></td>
+                            <td><button onclick="destroy('{{ $value['Id'] }}', '{{ csrf_token() }}')">刪除</button></td>
                         </tr>
                     @endforeach
             </table>
@@ -39,7 +39,7 @@
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
                             <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
-                            <td><a>刪除</a></td>
+                            <td><button onclick="destroy('{{ $value['Id'] }}', '{{ csrf_token() }}')">刪除</button></td>
                         </tr>
                     @endforeach
             </table>
@@ -54,7 +54,7 @@
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
                             <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
-                            <td><a>刪除</a></td>
+                            <td><button onclick="destroy('{{ $value['Id'] }}', '{{ csrf_token() }}')">刪除</button></td>
                         </tr>
                     @endforeach
             </table>
@@ -69,7 +69,7 @@
                             <td>{{ $value['Name'] }}</td>
                             <td>{{ $value['Price'] }}</td>
                             <td><a href="{{ route('edit', ['id' => $value['Id']]) }}">編輯</a></td>
-                            <td><a>刪除</a></td>
+                            <td><button onclick="destroy('{{ $value['Id'] }}', '{{ csrf_token() }}')">刪除</button></td>
                         </tr>
                     @endforeach
             </table>

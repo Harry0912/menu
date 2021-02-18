@@ -82,6 +82,7 @@ class MenuController extends Controller
                 'MenuKindId' => $menuKindId
             ]
         );
+    }
 
     public function edit($id)
     {
@@ -110,5 +111,13 @@ class MenuController extends Controller
         $data->Name = $name;
         $data->Price = $price;
         $data->save();
+    }
+
+    public function destroy($id)
+    {
+        $this->MenuModel
+            ->where('Id', '=', $id)
+            ->first()
+            ->delete();
     }
 }

@@ -44,3 +44,20 @@ function update()
         }
     })
 }
+
+function destroy(id, csrf)
+{
+    var isConfirm = confirm('Do you want to delete the menu?');
+
+    if (isConfirm) {
+        $.ajax({
+            type:'DELETE',
+            url:'/delete/'+id,
+            data:{_token:csrf, id:id},
+            success:function() {
+                alert('菜單刪除成功!');
+                document.location.href = '/';
+            }
+        });
+    }
+}
