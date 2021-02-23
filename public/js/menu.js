@@ -26,6 +26,7 @@ function store()
         }
     });
 }
+
 function update()
 {
     var id = $('#id').val()
@@ -60,4 +61,24 @@ function destroy(id, csrf)
             }
         });
     }
+}
+
+function search(csrf)
+{
+    var keyword = $('#keyword').val();
+
+    $.ajax({
+        type:'POST',
+        url:'/search/'+keyword,
+        data:{_token:csrf, keyword:keyword},
+        success:function(data) {
+            $('body').html(data);
+            $('#keyword').val(keyword);
+        }
+    });
+}
+
+function reset()
+{
+    document.location.href = '/';
 }

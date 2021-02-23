@@ -20,3 +20,4 @@ Route::post('/create/store', 'MenuController@store')->name('store');
 Route::get('/edit/{id}', 'MenuController@edit')->name('edit');
 Route::patch('/update', 'MenuController@update')->name('update');
 Route::delete('/delete/{id}', 'MenuController@destroy');
+Route::post('/search/{keyword}', 'MenuController@search');

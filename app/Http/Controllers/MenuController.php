@@ -16,10 +16,8 @@ class MenuController extends Controller
         $this->MenuKindModel = $menuKindModel;
     }
 
-    public function index()
+    public function show($results)
     {
-        $results = $this->MenuModel->get();
-
         $gratin = array();
         $curry = array();
         $beverage = array();
@@ -50,12 +48,21 @@ class MenuController extends Controller
             unset($Array);
         }
 
+        return array('gratin'=>$gratin, 'curry'=>$curry, 'beverage'=>$beverage, 'dessert'=>$dessert);
+    }
+
+    public function index()
+    {
+        $results = $this->MenuModel->get();
+
+        $data = $this->show($results);
+
         return view('index', 
             [
-                'gratin' => $gratin, 
-                'curry' => $curry, 
-                'beverage' => $beverage, 
-                'dessert' => $dessert
+                'gratin' => $data['gratin'], 
+                'curry' => $data['curry'], 
+                'beverage' => $data['beverage'], 
+                'dessert' => $data['dessert']
             ]
         );
     }
@@ -119,5 +126,23 @@ class MenuController extends Controller
             ->where('Id', '=', $id)
             ->first()
             ->delete();
+    }
+
+    public function search($keyword)
+    {
+        $results = $this->MenuModel
+            ->where('Name', 'like', '%'.$keyword.'%')
+            ->get();
+
+        $data = $this->show($results);
+
+        return view('index', 
+            [
+                'gratin' => $data['gratin'], 
+                'curry' => $data['curry'], 
+                'beverage' => $data['beverage'], 
+                'dessert' => $data['dessert']
+            ]
+        );
     }
 }

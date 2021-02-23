@@ -3,9 +3,9 @@
 @section('main')
     <h1>菜單管理</h1>
     <div style="margin:10px">
-        <input type="text">
-        <button>搜尋</button>
-        <button>清除</button>
+        <input type="text" id="keyword">
+        <button onclick="search('{{ csrf_token() }}')">搜尋</button>
+        <button onclick="reset()">清除</button>
     </div>
     <div style="margin:10px">
         <input type="checkbox" name="kind" value="#gratin" checked>焗烤
